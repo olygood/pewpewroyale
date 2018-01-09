@@ -12,11 +12,13 @@ public class Move : MonoBehaviour
 
     public float moveSpeed = 3.0f;
     public float bulletSpeed = 15.0f;
-    public GameObject bulletPrefab;
+    public Transform mv;
+    public float rotationSpeed = 20f;
 
     private Player player; // The Rewired Player
     private CharacterController cc;
     private Vector3 moveVector;
+    private Vector3 rotateVector;
     private bool fire;
 
     [System.NonSerialized] // Don't serialize this so the value is lost on an editor script recompile.
@@ -52,7 +54,8 @@ public class Move : MonoBehaviour
 
         moveVector.x = player.GetAxis("MoveHorizontal"); // get input by name or action id
         moveVector.y = player.GetAxis("MoveVertical");
-    
+        rotateVector.x = player.GetAxis("RotateHorizontal");
+        rotateVector.y = player.GetAxis("RotateVertical");
     }
 
     private void ProcessInput()
@@ -63,11 +66,15 @@ public class Move : MonoBehaviour
             cc.Move(moveVector * moveSpeed * Time.deltaTime);
         }
 
-        // Process fire
-        if (fire)
+        // Process rotation
+        if (rotateVector.x != 0.0f || rotateVector.y != 0.0f)
         {
-            GameObject bullet = (GameObject)Instantiate(bulletPrefab, transform.position + transform.right, transform.rotation);
-            bullet.GetComponent<Rigidbody>().AddForce(transform.right * bulletSpeed, ForceMode.VelocityChange);
+            float tru = Mathf.Acos(rotateVector.x);
+
+            Vector3 v3 = new Vector3(0f, 0f, tru);
+            Quaternion qTo = Quaternion.LookRotation(v3);
+
+            transform.rotation = Quaternion.Slerp(transform.rotation, qTo, rotationSpeed * Time.deltaTime);
         }
     }
 }
