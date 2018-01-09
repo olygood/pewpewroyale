@@ -8,8 +8,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b64c96e4157122b47a0ca1a3afa5032b, type: 3}
-  m_Name: Player3
+  m_Script: {fileID: 11500000, guid: 9f26c3b15be0e4b41a1fa7d0119d9c89, type: 3}
+  m_Name: jeromej
   m_EditorClassIdentifier: 
-  characterType: -1
-  instance: {fileID: 0}
+  spawnPoints:
+  - {x: 0, y: 21.5}
+  - {x: 24.5, y: 21.5}
+  - {x: 0, y: 0}
+  - {x: 25.5, y: 0}

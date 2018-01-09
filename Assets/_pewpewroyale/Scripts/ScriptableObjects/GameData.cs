@@ -13,5 +13,13 @@ public class GameData : ScriptableObject {
 
     public string gameData_path;
 
+    public List<Color> playersColor = new List<Color>()
+    {
+        Color.yellow,
+        Color.green,
+        Color.blue,
+        Color.red
+    };
+
     public List<PlayerData> players = new List<PlayerData>();
 }
