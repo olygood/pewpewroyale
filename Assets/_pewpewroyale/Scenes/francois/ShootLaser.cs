@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//source : https://www.youtube.com/watch?v=UZwIni8sf8o
+
 public class ShootLaser : MonoBehaviour {
 
     private Transform m_transform;
@@ -42,19 +44,26 @@ public class ShootLaser : MonoBehaviour {
             Ray2D ray = new Ray2D(playerBulletSpawnPlaceHolder.position, playerBulletSpawnPlaceHolder.forward);
             RaycastHit2D hit;
 
+            Debug.Log("direction="+ playerBulletSpawnPlaceHolder.forward);
+
             m_laserLineRenderer.SetPosition(0, ray.origin);
 
-            hit = Physics2D.Raycast(ray.origin, Vector2.right, reachDistance);
-
+            hit = Physics2D.Raycast(ray.origin, ray.direction, reachDistance);
+                        
             if (hit.collider)
             {
                 m_laserLineRenderer.SetPosition(1, hit.point);
                 return hit.collider.gameObject;
             }
             else
+            {
+                Vector3 endpoint = ray.origin + (ray.direction * reachDistance);
+                //m_laserLineRenderer.SetPosition(1, endpoint);
                 m_laserLineRenderer.SetPosition(1, ray.GetPoint(reachDistance));
+                Debug.Log(string.Format("no coll: reachDistance={0} endpoint={1} ray.getpoint={2}", reachDistance, endpoint, ray.GetPoint(reachDistance)));
+            }
         }
-        m_laserLineRenderer.enabled = false;
+        //m_laserLineRenderer.enabled = false;
         return null;
     }
     /*

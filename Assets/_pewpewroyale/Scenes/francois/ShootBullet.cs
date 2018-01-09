@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Rewired;
 
 public class ShootBullet : MonoBehaviour
 {
@@ -17,9 +18,11 @@ public class ShootBullet : MonoBehaviour
 	
 	void Update ()
     {
-        if (Input.GetButton("Fire1"))
+
+        if (Input.GetButton("Fire1")) 
         {
             FireBullet();
+
         }
     }
 
