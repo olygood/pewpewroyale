@@ -61,8 +61,8 @@ public class ShootBullet : MonoBehaviour
         // Get the input from the Rewired Player. All controllers that the Player owns will contribute, so it doesn't matter
         // whether the input is coming from a joystick, the keyboard, mouse, or a custom controller.
 
-        moveVector.x = player.GetAxis("Move Horizontal"); // get input by name or action id
-        moveVector.y = player.GetAxis("Move Vertical");
+        moveVector.x = player.GetAxis("MoveHorizontalP1"); // get input by name or action id
+        moveVector.y = player.GetAxis("MoveVerticalP1");
         fire = player.GetButtonDown("Fire");
     }
 
@@ -76,8 +76,9 @@ public class ShootBullet : MonoBehaviour
 
         if (fire)
         {
-            GameObject bullet = (GameObject)Instantiate(bulletPrefab, transform.position + transform.right, transform.rotation);
-            bullet.GetComponent<Rigidbody>().AddForce(transform.right * bulletSpeed, ForceMode.VelocityChange);
+            FireBullet();
+//            GameObject bullet = (GameObject)Instantiate(bulletPrefab, transform.position + transform.right, transform.rotation);
+//            bullet.GetComponent<Rigidbody>().AddForce(transform.right * bulletSpeed, ForceMode.VelocityChange);
         }
     }
 
