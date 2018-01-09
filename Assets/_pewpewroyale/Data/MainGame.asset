@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e96a38ff50006d4ebba15c47e7bcc4a, type: 3}
+  m_Name: MainGame
+  m_EditorClassIdentifier: 
+  detect_controllers_automatically: 0
+  number_of_players: 3
+  players:
+  - {fileID: 11400000, guid: b1d3c0d63b16b554183b58900d383f7f, type: 2}
+  - {fileID: 11400000, guid: f77743a0a677d4845848d793e0709498, type: 2}
+  - {fileID: 11400000, guid: 597efe452b977af47a59e485e8a56a80, type: 2}
+  - {fileID: 11400000, guid: 8a48797e86df0774095346ca2b4295e0, type: 2}
