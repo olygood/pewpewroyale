@@ -13,10 +13,14 @@ public class BulletScript : MonoBehaviour {
 
     float lifetime = 2.5f;
 
-    void Start()
+    void Awake()
     {
-        if (!m_body) m_body = gameObject.GetComponent<Rigidbody2D>();
-        m_body.velocity = new Vector3(speed, 0f, 0f);
+        m_body = GetComponent<Rigidbody2D>();
+    }
+
+    public void SetVelocity(float x, float y)
+    {
+        m_body.velocity = new Vector2(x * speed, y * speed);
     }
 
     void Update()

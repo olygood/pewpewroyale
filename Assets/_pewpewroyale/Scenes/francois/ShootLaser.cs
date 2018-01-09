@@ -1,8 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-//source : https://www.youtube.com/watch?v=UZwIni8sf8o
+﻿using UnityEngine;
 
 public class ShootLaser : MonoBehaviour {
 
@@ -15,7 +11,8 @@ public class ShootLaser : MonoBehaviour {
     [SerializeField] [Range(1f, 10f)] float reachDistance = 5f;
     float buffer = 0f;
     
-    void Start () {
+    void Start ()
+    {
         m_transform = GetComponent<Transform>();
         m_laserLineRenderer = GetComponent<LineRenderer>();
         m_laserLineRenderer.enabled = true;
@@ -33,7 +30,6 @@ public class ShootLaser : MonoBehaviour {
                 Debug.Log("Player hit by laser");
             }
         }
-
     }
 
     private GameObject FireLaser()
@@ -41,32 +37,36 @@ public class ShootLaser : MonoBehaviour {
         m_laserLineRenderer.enabled = true;
         if (Input.GetButton("Fire2"))
         {
-            Ray2D ray = new Ray2D(playerBulletSpawnPlaceHolder.position, playerBulletSpawnPlaceHolder.forward);
-            RaycastHit2D hit;
-
-            Debug.Log("direction="+ playerBulletSpawnPlaceHolder.forward);
-
-            m_laserLineRenderer.SetPosition(0, ray.origin);
-
-            hit = Physics2D.Raycast(ray.origin, ray.direction, reachDistance);
-                        
-            if (hit.collider)
+            if (buffer > cooldown)
             {
-                m_laserLineRenderer.SetPosition(1, hit.point);
-                return hit.collider.gameObject;
+                buffer = 0f;
+
+                Ray2D ray = new Ray2D(playerBulletSpawnPlaceHolder.position, (playerBulletSpawnPlaceHolder.position - m_transform.position));
+                RaycastHit2D hit;
+
+                m_laserLineRenderer.SetPosition(0, ray.origin);
+
+                hit = Physics2D.Raycast(ray.origin, ray.direction, reachDistance);
+
+                if (hit.collider)
+                {
+                    m_laserLineRenderer.SetPosition(1, hit.point);
+                    return hit.collider.gameObject;
+                }
+                else
+                {
+                    m_laserLineRenderer.SetPosition(1, ray.GetPoint(reachDistance));
+                    return null;
+                }
             }
-            else
-            {
-                Vector3 endpoint = ray.origin + (ray.direction * reachDistance);
-                //m_laserLineRenderer.SetPosition(1, endpoint);
-                m_laserLineRenderer.SetPosition(1, ray.GetPoint(reachDistance));
-                Debug.Log(string.Format("no coll: reachDistance={0} endpoint={1} ray.getpoint={2}", reachDistance, endpoint, ray.GetPoint(reachDistance)));
-            }
+            else buffer += Time.deltaTime;
         }
-        //m_laserLineRenderer.enabled = false;
+        else m_laserLineRenderer.enabled = false;
         return null;
     }
+
     /*
+    //source : https://www.youtube.com/watch?v=UZwIni8sf8o
     IEnumerator _FireLaser()
     {
         m_laserLineRenderer.enabled = true;
