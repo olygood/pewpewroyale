@@ -10,6 +10,9 @@ public class SelectCharacter : MonoBehaviour {
 	
 	public void Pick(int _selection)
     {
-        Debug.Log(m_playerId + " " + _selection);
+        Debug.Log("Player " + m_playerId + "  DesiredCharacter " + _selection);
+
+        currentGame.players[m_playerId].characterType = _selection;
+
     }
 }
