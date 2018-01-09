@@ -24,4 +24,9 @@ public class BulletScript : MonoBehaviour {
         lifetime -= Time.deltaTime;
         if (lifetime < 0) { Destroy(gameObject); }
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Destroy(gameObject);
+    }
 }
