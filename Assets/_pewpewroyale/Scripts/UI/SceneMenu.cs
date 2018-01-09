@@ -7,22 +7,29 @@ public class SceneMenu : MonoBehaviour
 {
     public void NewGame()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadSceneAsync("jeromej");
     }
 
     public void ExitGame()
     {
+        Debug.Log("Quitting");
+
         Application.Quit();
+
+        Debug.Break();
     }
 
     public void Options()
     {
-
+        // Priorité 3
+        Debug.LogWarning("Options WIP");
     }
 
     public void Credit()
     {
+        // Priorité 4
 
+        Debug.LogWarning("Credit WIP");
     }
 	
 }
