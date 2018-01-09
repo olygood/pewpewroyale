@@ -32,11 +32,7 @@ public class ShootBullet : MonoBehaviour
         }
         else buffer += Time.deltaTime;
     }
-
-    private void FireLaser()
-    {
-
-    }
+    
     private void OnCollisionEnter2D(Collision2D collision)
     {
         switch(collision.transform.tag)
