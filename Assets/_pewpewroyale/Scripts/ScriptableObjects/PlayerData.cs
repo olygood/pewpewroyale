@@ -21,4 +21,10 @@ public class PlayerData : ScriptableObject {
         }
     }
 
+    public Color color
+    {
+        get { return this.instance.GetComponent<SpriteRenderer>().color; }
+        set { this.instance.GetComponent<SpriteRenderer>().color = value; }
+    }
+
 }

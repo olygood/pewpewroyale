@@ -89,7 +89,7 @@ public class GameInit : DualBehaviour
 
     private void UpdateColor(PlayerData _player)
     {
-        _player.instance.GetComponent<SpriteRenderer>().color = m_gameData.playersColor[_player.id];
+        _player.color = m_gameData.playersColor[_player.characterType];
     }
 
     #endregion
