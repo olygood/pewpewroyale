@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using Rewired;
+﻿using UnityEngine;
 
 public class ShootBullet : MonoBehaviour
 {
@@ -10,28 +7,25 @@ public class ShootBullet : MonoBehaviour
     [SerializeField] Transform playerBulletSpawnPlaceHolder;
     [SerializeField] [Range(0f, 2f)] float cooldown = 0.5f;
     float buffer = 0f;
-
-    void Start ()
-    {
-		
-	}
 	
 	void Update ()
     {
-
         if (Input.GetButton("Fire1")) 
         {
             FireBullet();
-
         }
     }
-
-    private void FireBullet()
+    
+    public void FireBullet()
     {
         if (buffer > cooldown)
         {
-            Instantiate(bulletPrefab, playerBulletSpawnPlaceHolder.position, playerBulletSpawnPlaceHolder.rotation);
             buffer = 0f;
+
+            GameObject bullet = Instantiate(bulletPrefab, playerBulletSpawnPlaceHolder.position, playerBulletSpawnPlaceHolder.rotation);
+            BulletScript bulletScript = bullet.GetComponent<BulletScript>();
+            Vector3 translation = (playerBulletSpawnPlaceHolder.position - transform.position);
+            bulletScript.SetVelocity(translation.x, translation.y);
         }
         else buffer += Time.deltaTime;
     }
