@@ -11,8 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e96a38ff50006d4ebba15c47e7bcc4a, type: 3}
   m_Name: MainGame
   m_EditorClassIdentifier: 
-  detect_controllers_automatically: 0
-  number_of_players: 3
+  gameSceneName: jeromej
   players:
   - {fileID: 11400000, guid: b1d3c0d63b16b554183b58900d383f7f, type: 2}
   - {fileID: 11400000, guid: f77743a0a677d4845848d793e0709498, type: 2}
