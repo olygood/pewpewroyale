@@ -8,8 +8,10 @@ public class GameData : ScriptableObject {
 
     [Range(2, 4)]
     public int number_of_players = 3;*/
-
+    
     public string gameSceneName;
+
+    public string gameData_path;
 
     public List<PlayerData> players = new List<PlayerData>();
 }

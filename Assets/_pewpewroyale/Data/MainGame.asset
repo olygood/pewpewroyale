@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Name: MainGame
   m_EditorClassIdentifier: 
   gameSceneName: jeromej
+  gameData_path: Assets/_pewpewroyale/Data/
   players:
   - {fileID: 11400000, guid: b1d3c0d63b16b554183b58900d383f7f, type: 2}
   - {fileID: 11400000, guid: f77743a0a677d4845848d793e0709498, type: 2}
