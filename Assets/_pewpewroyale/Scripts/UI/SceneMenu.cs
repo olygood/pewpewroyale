@@ -7,7 +7,7 @@ public class SceneMenu : MonoBehaviour
 {
     public void NewGame()
     {
-        SceneManager.LoadSceneAsync("jeromej");
+        SceneManager.LoadSceneAsync("ChosePlayerMenu");
     }
 
     public void ExitGame()
