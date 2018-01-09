@@ -4,4 +4,19 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/_pewpewroyale/Scenes/JeromeJ/jeromej.unity
+    guid: 0aa45753b1dafd2488a0f2f74b796058
+  - enabled: 1
+    path: Assets/_pewpewroyale/Scenes/Neil/MENU.unity
+    guid: 9d760e118a2ea0247a05f715ee2db93c
+  - enabled: 1
+    path: Assets/_pewpewroyale/Scenes/Oli/sceneoli.unity
+    guid: eb98eb66cc221f14280ed1c0f47dd1e0
+  - enabled: 1
+    path: Assets/_pewpewroyale/Scenes/Val/MainRewired.unity
+    guid: 5ece5426342469e44b17857d757614dc
+  - enabled: 1
+    path: Assets/_pewpewroyale/Scenes/francois.unity
+    guid: f6eeb326ad6ba2d43bfe4cdb887deba0
