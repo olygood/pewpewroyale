@@ -164,7 +164,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
-  healthBar: {fileID: 0}
+  healthBar: {fileID: 114428615370164974, guid: 313c18150d2802542954f8b901c15f6b,
+    type: 2}
   m_levelData: {fileID: 11400000, guid: d7ed3ce754077ef4b8cab32ed23a24ab, type: 2}
   m_inputManager: {fileID: 114104282218325766}
 --- !u!212 &212199501076612708
