@@ -10,7 +10,7 @@ public class HealthBar_Score : MonoBehaviour
 
     private GameObject player;
     public LevelData m_levelData;
-    public InputManager m_inputManager = new InputManager();
+    public PlayerInputManager m_inputManager = new PlayerInputManager();
 
   
 

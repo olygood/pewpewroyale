@@ -6,7 +6,7 @@ using System;
 
 [AddComponentMenu("")]
 [RequireComponent(typeof(Rigidbody2D))]
-public class InputManager : MonoBehaviour
+public class PlayerInputManager : MonoBehaviour
 {
     public int m_playerId = 0; // The Rewired player id of this character
     public Move m_move;
@@ -17,7 +17,7 @@ public class InputManager : MonoBehaviour
     private Vector3 m_rotateVector;
     private bool m_shotfired;
 
-    [System.NonSerialized] // Don't serialize this so the value is lost on an editor script recompile.
+    //[System.NonSerialized] // Don't serialize this so the value is lost on an editor script recompile.
     private bool m_initialized = false;
 
     private void Initialize()
