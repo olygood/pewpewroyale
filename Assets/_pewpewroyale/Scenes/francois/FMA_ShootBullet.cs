@@ -15,9 +15,9 @@ public class ShootBullet : MonoBehaviour
             buffer = 0f;
 
             GameObject bullet = Instantiate(bulletPrefab, playerBulletSpawnPlaceHolder.position, playerBulletSpawnPlaceHolder.rotation);
-            BulletScript bulletScript = bullet.GetComponent<BulletScript>();
+            FMA_BulletScript bulletScript = bullet.GetComponent<FMA_BulletScript>();
             Vector3 translation = (playerBulletSpawnPlaceHolder.position - transform.position);
-            bulletScript.SetVelocity(translation.x, translation.y);
+//            bulletScript.SetVelocity(translation.x, translation.y);
         }
         else buffer += Time.deltaTime;
     }
