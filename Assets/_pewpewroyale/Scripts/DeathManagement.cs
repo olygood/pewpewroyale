@@ -24,6 +24,5 @@ public class DeathManagement : MonoBehaviour {
             transform.position = vect;
     }
 
-    private void 
 }
 
