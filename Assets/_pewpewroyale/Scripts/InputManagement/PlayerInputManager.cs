@@ -17,6 +17,8 @@ public class PlayerInputManager : MonoBehaviour
     private Vector3 m_rotateVector;
     private bool m_shotfired;
 
+    public FMA_PlayerScript m_play;
+
     //[System.NonSerialized] // Don't serialize this so the value is lost on an editor script recompile.
     private bool m_initialized = false;
 
@@ -38,7 +40,8 @@ public class PlayerInputManager : MonoBehaviour
         m_move.ProcessRotation(m_rotateVector);
         if (m_shotfired == true)
         {
-            m_shoot.FireBullet();
+            m_play.Fire();
+            //m_shoot.FireBullet();
             m_shotfired = false;
         }
     }

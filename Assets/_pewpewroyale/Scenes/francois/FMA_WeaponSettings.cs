@@ -3,12 +3,12 @@
 public class FMA_WeaponSettings : MonoBehaviour
 {
     #region singleton
-    private FMA_WeaponSettings _instance;
-    public FMA_WeaponSettings Instance
+    private static FMA_WeaponSettings _instance;
+    public static FMA_WeaponSettings Instance
     {
         get { return _instance; }
     }
-    private void Start()
+    private void Awake()
     {
         _instance = this;
     }
