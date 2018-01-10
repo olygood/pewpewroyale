@@ -8,14 +8,6 @@ public class ShootBullet : MonoBehaviour
     [SerializeField] [Range(0f, 2f)] float cooldown = 0.5f;
     float buffer = 0f;
 	
-	void Update ()
-    {
-        if (Input.GetButton("Fire1")) 
-        {
-            FireBullet();
-        }
-    }
-    
     public void FireBullet()
     {
         if (buffer > cooldown)
