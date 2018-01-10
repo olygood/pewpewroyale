@@ -8,7 +8,7 @@ using System;
 [RequireComponent(typeof(Rigidbody2D))]
 public class InputManager : MonoBehaviour
 {
-    public int m_playerId = 0; // The Rewired player id of this character
+    public int m_playerId = -1; // The Rewired player id of this character
     public Move m_move;
     public ShootBullet m_shoot;
 
@@ -35,7 +35,7 @@ public class InputManager : MonoBehaviour
         GetInput();
         m_move.ProcessMovement(m_moveVector);
         m_move.ProcessRotation(m_rotateVector);
-        if (m_shotfired)
+        if (m_shotfired == true)
         {
             m_shoot.FireBullet();
             m_shotfired = false;
@@ -51,8 +51,6 @@ public class InputManager : MonoBehaviour
         m_moveVector.y = m_player.GetAxis("MoveVertical");
         m_rotateVector.x = m_player.GetAxis("RotateHorizontal");
         m_rotateVector.y = m_player.GetAxis("RotateVertical");
-        m_shotfired = m_player.GetButton("Fire1");
+        m_shotfired = m_player.GetButton("Shoot");
     }
-    
-
 }
