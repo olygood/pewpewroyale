@@ -29,8 +29,8 @@ public class PlayerScript : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetButton("Fire1")) Fire();
-        if (Input.GetButton("Fire2"))
+        if (Input.GetButtonDown("Fire1")) Fire();
+        if (Input.GetButtonDown("Fire2"))
         {
             switch(Weapon)
             {
@@ -149,6 +149,7 @@ public class PlayerScript : MonoBehaviour
 
     public void FireBullet()
     {
+        if (m_debug) Debug.Log("Player #" + m_playerID + " : Fire bullet");
         if (bulletsCooldownBuffer > bulletsCooldown)
         {
             bulletsCooldownBuffer = 0f;
@@ -167,9 +168,10 @@ public class PlayerScript : MonoBehaviour
     private LineRenderer m_laserLineRenderer;
     [SerializeField] [Range(0f, 2f)] float laserCooldown = 0.5f;
     [SerializeField] [Range(1f, 10f)] float laserReachDistance = 5f;
-    float laserCooldownBuffer = 0f;
+    private float laserCooldownBuffer = 0f;
     private void InitLaserLineRenderer()
     {
+        if (m_debug) Debug.Log("Player #" + m_playerID + " : InitLaserLineRenderer");
         m_laserLineRenderer = GetComponent<LineRenderer>();
         if (m_debug && !m_laserLineRenderer) Debug.LogError("Can't find AudioSource on WeaponPlaceHolder for player #" + m_playerID);
         m_laserLineRenderer.enabled = true;
@@ -178,8 +180,10 @@ public class PlayerScript : MonoBehaviour
     }
     private GameObject FireLaser()
     {
+        if (m_debug) Debug.Log("Player #" + m_playerID + " : Fire laser");
         if (laserCooldownBuffer > laserCooldown)
         {
+            if (m_debug) Debug.Log("Player #" + m_playerID + " : laserCooldownBuffer > laserCooldown");
             m_laserLineRenderer.enabled = true;
             laserCooldownBuffer = 0f;
 

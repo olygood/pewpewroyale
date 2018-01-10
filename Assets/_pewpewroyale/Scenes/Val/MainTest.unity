@@ -173,6 +173,11 @@ Prefab:
       propertyPath: m_playerId
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114104282218325766, guid: b72904540da8d9240b33c421585cb82c,
+        type: 2}
+      propertyPath: m_playerId
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b72904540da8d9240b33c421585cb82c, type: 2}
   m_IsPrefabParent: 0
@@ -220,6 +225,11 @@ Prefab:
       value: Player (3)
       objectReference: {fileID: 0}
     - target: {fileID: 114622173513369956, guid: b72904540da8d9240b33c421585cb82c,
+        type: 2}
+      propertyPath: m_playerId
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114104282218325766, guid: b72904540da8d9240b33c421585cb82c,
         type: 2}
       propertyPath: m_playerId
       value: 3
@@ -9151,6 +9161,11 @@ Prefab:
       propertyPath: m_playerId
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 114104282218325766, guid: b72904540da8d9240b33c421585cb82c,
+        type: 2}
+      propertyPath: m_playerId
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b72904540da8d9240b33c421585cb82c, type: 2}
   m_IsPrefabParent: 0
@@ -11623,6 +11638,17 @@ MonoBehaviour:
         _modifierKey2: 0
         _modifierKey3: 0
       - _actionCategoryId: 0
+        _actionId: 17
+        _elementType: 1
+        _elementIdentifierId: 6
+        _axisRange: 0
+        _invert: 0
+        _axisContribution: 0
+        _keyboardKeyCode: 0
+        _modifierKey1: 0
+        _modifierKey2: 0
+        _modifierKey3: 0
+      - _actionCategoryId: 0
         _actionId: -1
         _elementType: 1
         _elementIdentifierId: 7
@@ -11791,17 +11817,6 @@ MonoBehaviour:
         _actionId: 15
         _elementType: 0
         _elementIdentifierId: 0
-        _axisRange: 0
-        _invert: 0
-        _axisContribution: 0
-        _keyboardKeyCode: 0
-        _modifierKey1: 0
-        _modifierKey2: 0
-        _modifierKey3: 0
-      - _actionCategoryId: 0
-        _actionId: 17
-        _elementType: 1
-        _elementIdentifierId: 6
         _axisRange: 0
         _invert: 0
         _axisContribution: 0

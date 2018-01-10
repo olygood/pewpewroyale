@@ -208,12 +208,12 @@ MonoBehaviour:
   m_WeaponBolterAudioClip: {fileID: 0}
   bulletPrefab: {fileID: 1753120959534392, guid: 88043920f9049694285adf1d7c9cbfcd,
     type: 2}
-  bulletsCooldown: 0.5
+  bulletsCooldown: 0.1
   m_WeaponLaserSprite: {fileID: 21300000, guid: 02f5bdf2090641944a11c30aa39f57a7,
     type: 3}
   m_WeaponLaserAudioClip: {fileID: 0}
-  laserCooldown: 0.5
-  laserReachDistance: 5
+  laserCooldown: 0
+  laserReachDistance: 10
 --- !u!50 &592069551
 Rigidbody2D:
   serializedVersion: 4
@@ -257,7 +257,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.16, y: 0.16}
+  m_Size: {x: 0.1, y: 0.1}
   m_EdgeRadius: 0
 --- !u!120 &592069554
 LineRenderer:
@@ -745,13 +745,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2029901217}
-  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0.2, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: 0.15, y: 0, z: 0}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 1}
   m_Children: []
   m_Father: {fileID: 592069549}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
 --- !u!212 &2029901219
 SpriteRenderer:
   m_ObjectHideFlags: 0
