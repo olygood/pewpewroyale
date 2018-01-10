@@ -11,8 +11,6 @@ public class Move : MonoBehaviour
     public float m_moveSpeed = 3.0f;
     public float m_rotationSpeed = 20f;
 
-//    private Vector3 m_moveVector;
-//    private Vector3 m_rotateVector;
     private Rigidbody2D m_rigidbody;
 
     void Awake()
@@ -41,11 +39,6 @@ public class Move : MonoBehaviour
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0, 0, playerAngle), m_rotationSpeed * Time.deltaTime);
         }
     }
-
-/*    private void OnGUI()
-    {
-        GUILayout.Button(m_rotateVector.x + " - " + m_rotateVector.y);
-    }*/
 }
 
 	
