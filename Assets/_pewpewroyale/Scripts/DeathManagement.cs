@@ -23,5 +23,7 @@ public class DeathManagement : MonoBehaviour {
             Vector2 vect = m_levelData.spawnPoints[id];
             transform.position = vect;
     }
+
+    private void 
 }
 
