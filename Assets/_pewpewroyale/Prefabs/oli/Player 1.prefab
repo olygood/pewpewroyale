@@ -26,6 +26,7 @@ GameObject:
   - component: {fileID: 58721704236040238}
   - component: {fileID: 114104282218325766}
   - component: {fileID: 114016691265324974}
+  - component: {fileID: 114158675267121966}
   m_Layer: 0
   m_Name: Player 1
   m_TagString: Untagged
@@ -71,7 +72,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1370253081893162}
   m_LocalRotation: {x: -0, y: 0, z: -0.0071556442, w: -0.9999744}
-  m_LocalPosition: {x: 10.634879, y: 3.176006, z: 0}
+  m_LocalPosition: {x: 2.69, y: 3.176006, z: 0}
   m_LocalScale: {x: 5.6207924, y: 5.6207924, z: 5.6207924}
   m_Children:
   - {fileID: 4615484843266052}
@@ -221,6 +222,22 @@ MonoBehaviour:
   m_move: {fileID: 114622173513369956}
   m_shoot: {fileID: 114625667568232140}
   m_play: {fileID: 114016691265324974}
+--- !u!114 &114158675267121966
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1370253081893162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b61244e4f620feb4fb77b8a61c0ee393, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  health: 0
+  healthBar: {fileID: 0}
+  m_levelData: {fileID: 11400000, guid: d7ed3ce754077ef4b8cab32ed23a24ab, type: 2}
+  m_inputManager: {fileID: 114104282218325766}
 --- !u!114 &114622173513369956
 MonoBehaviour:
   m_ObjectHideFlags: 1
