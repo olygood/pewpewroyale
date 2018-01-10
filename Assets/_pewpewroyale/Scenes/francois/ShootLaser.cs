@@ -34,9 +34,9 @@ public class ShootLaser : MonoBehaviour {
 
     private GameObject FireLaser()
     {
-        m_laserLineRenderer.enabled = true;
         if (Input.GetButton("Fire2"))
         {
+            m_laserLineRenderer.enabled = true;
             if (buffer > cooldown)
             {
                 buffer = 0f;

@@ -8,7 +8,7 @@ public class BulletScript : MonoBehaviour {
     private Rigidbody2D m_body;
 
     [SerializeField]
-    [Range(1f, 20f)]
+    [Range(1f, 50f)]
     float speed = 10f;
 
     float lifetime = 2.5f;
