@@ -20,7 +20,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4378484330158210}
   - component: {fileID: 212830588639282302}
-  - component: {fileID: 114542408116529010}
   - component: {fileID: 114301860067988566}
   - component: {fileID: 50802252399356778}
   - component: {fileID: 58535034266520642}
@@ -207,7 +206,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_playerId: 0
   m_move: {fileID: 114301860067988566}
-  m_shoot: {fileID: 114542408116529010}
+  m_shoot: {fileID: 0}
   m_play: {fileID: 114420931230913914}
 --- !u!114 &114141050629770766
 MonoBehaviour:
@@ -250,17 +249,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponPlaceHolder: {fileID: 1895393676966210}
   m_playerID: 0
---- !u!114 &114542408116529010
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1020485640917118}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 25e09eec5af8e0842a86bcd73979072e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!120 &120865383744795892
 LineRenderer:
   m_ObjectHideFlags: 1
