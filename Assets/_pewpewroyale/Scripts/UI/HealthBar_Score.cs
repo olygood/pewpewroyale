@@ -47,6 +47,9 @@ public class HealthBar_Score : MonoBehaviour
             origin.IKilledSomeone();
             color.a = 100f;
             GetComponent<SpriteRenderer>().material.color = color;
+            Transform trans = gameObject.GetComponent<Transform>();
+            trans.localScale = new Vector3(5.62f, 5.62f, 5.62f);
+
             Respawn();
         }
     }
