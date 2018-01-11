@@ -8,6 +8,13 @@ public class FMA_BulletScript : MonoBehaviour {
     private Rigidbody2D m_body;
     private float lifetime = 5f;
 
+    private GameObject _originPlayer;
+    public GameObject OriginPlayer
+    {
+        get { return _originPlayer; }
+        set { _originPlayer = value; }
+    }
+
     void Awake()
     {
         m_body = GetComponent<Rigidbody2D>();
@@ -15,7 +22,6 @@ public class FMA_BulletScript : MonoBehaviour {
 
     public void SetVelocity(float x, float y, float speed)
     {
-        Debug.Log("SetVelocity");
         m_body.velocity = new Vector2(x * speed, y * speed);
     }
 
