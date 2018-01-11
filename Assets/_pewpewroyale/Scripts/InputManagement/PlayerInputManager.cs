@@ -58,6 +58,8 @@ public class PlayerInputManager : MonoBehaviour
         }
         if (m_changeWeapon)
         {
+            m_play.ChangeWeapon();
+            /*
             switch (m_play.Weapon)
             {
                 case FMA_WeaponSettings.WeaponType.BOLTER:
@@ -70,6 +72,7 @@ public class PlayerInputManager : MonoBehaviour
                     break;
             }
              //            m_play.ChangeWeapon(FMA_WeaponSettings.WeaponType.);
+             */
             Debug.Log("Changed weapon");
         }
     }
@@ -84,7 +87,7 @@ public class PlayerInputManager : MonoBehaviour
         m_rotateVector.x = m_player.GetAxis("RotateHorizontal");
         m_rotateVector.y = m_player.GetAxis("RotateVertical");
         m_shotfired = m_player.GetButton("Shoot");
-        m_changeWeapon = m_player.GetButton("ChangeWeapon");
+        m_changeWeapon = m_player.GetButtonDown("ChangeWeapon");
         if(m_playerId == 1)
         {
             Debug.Log(m_moveVector);

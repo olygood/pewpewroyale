@@ -68,9 +68,9 @@ public class FMA_PlayerScript : MonoBehaviour
         m_weapons.Fire();
     }
 
-    public void ChangeWeapon(FMA_WeaponSettings.WeaponType weapon)
+    public void ChangeWeapon()
     {
-        m_weapons.Weapon = weapon;
+        m_weapons.ChangeWeapon();
     }
 
     public void Move(Vector3 movement)
