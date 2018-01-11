@@ -94,7 +94,8 @@ public class ImportNinjaInitializer
         DirectoryInfo dir = new DirectoryInfo(sourceDirName);
 
         if (!dir.Exists)
-            throw new DirectoryNotFoundException("Source directory does not exist or could not be found: " + sourceDirName);
+            // throw new DirectoryNotFoundException("Source directory does not exist or could not be found: " + sourceDirName);
+            yield break;
 
         DirectoryInfo[] dirs = dir.GetDirectories();
         
