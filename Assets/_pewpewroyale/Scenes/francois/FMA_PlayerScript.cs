@@ -16,38 +16,45 @@ public class FMA_PlayerScript : MonoBehaviour
     public GameObject weaponPlaceHolder;
     private FMA_WeaponSettings weaponsSettings;
 
-    public int m_playerID = -1;
-    
+    [SerializeField]
+    private int m_playerID = -1;
+    public int PlayerID
+    {
+        get { return m_playerID; }
+        set { m_playerID = value; }
+    }
+
+
     void Start()
     {
         weaponsSettings = FMA_WeaponSettings.Instance;
-        Debug.Log(string.Format("weaponsSettings is null : {0}", weaponsSettings==null));
         if (m_playerID == -1) Debug.LogError("Player ID is not defined!");
         if (weaponPlaceHolder == null) Debug.LogError("No Weapon place holder defined for player #" + ((m_playerID == -1) ? "?": m_playerID.ToString()));
         m_transform = GetComponent<Transform>();
-        m_weapons = new FMA_PlayerWeapons(m_playerID, weaponPlaceHolder, weaponsSettings, this);
+        m_weapons = new FMA_PlayerWeapons(weaponPlaceHolder, weaponsSettings, this);
     }
 
     void Update()
     {
-        //if (Input.GetButtonDown("Fire1")) m_weapons.Fire();
-        //if (Input.GetButtonDown("Fire2"))
-        //{
-        //    switch (m_weapons.Weapon)
-        //    {
-        //        case FMA_WeaponSettings.WeaponType.LASER:
-        //            m_weapons.Weapon = FMA_WeaponSettings.WeaponType.BOLTER;
-        //            break;
-        //        case FMA_WeaponSettings.WeaponType.BOLTER:
-        //            m_weapons.Weapon = FMA_WeaponSettings.WeaponType.LASER;
-        //            break;
-        //    }
-        //}
+        /*
+        if (Input.GetButtonDown("Fire1")) m_weapons.Fire();
+        if (Input.GetButtonDown("Fire2"))
+        {
+            switch (m_weapons.Weapon)
+            {
+                case FMA_WeaponSettings.WeaponType.LASER:
+                    m_weapons.Weapon = FMA_WeaponSettings.WeaponType.BOLTER;
+                    break;
+                case FMA_WeaponSettings.WeaponType.BOLTER:
+                    m_weapons.Weapon = FMA_WeaponSettings.WeaponType.LASER;
+                    break;
+            }
+        }*/
     }
 
     public void Fire()
     {
-        Debug.Log("Fire : " + m_weapons);
+        if (m_debug) Debug.Log("Player #" + m_playerID + " : Fire with " + m_weapons);
         m_weapons.Fire();
     }
 
@@ -66,12 +73,19 @@ public class FMA_PlayerScript : MonoBehaviour
         if (m_debug) Debug.Log("Player #" + m_playerID + " : Rotate");
     }
 
+    public void PlayerGetHit(FMA_WeaponSettings.WeaponType weapon, FMA_PlayerScript origin)
+    {
+        if (m_debug) Debug.Log(string.Format("Player #{0} hit by {1} from player #{2}", m_playerID, weapon, origin.PlayerID));
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         switch (collision.transform.tag)
         {
             case "bullet":
-                Debug.Log("Player hit");
+                FMA_BulletScript bullet = collision.gameObject.GetComponent<FMA_BulletScript>();
+                FMA_PlayerScript player = bullet.OriginPlayer.GetComponent<FMA_PlayerScript>();
+                PlayerGetHit(FMA_WeaponSettings.WeaponType.BOLTER, player);
                 break;
         }
     }

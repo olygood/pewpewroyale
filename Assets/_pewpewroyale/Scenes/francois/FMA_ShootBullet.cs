@@ -2,6 +2,7 @@
 
 public class ShootBullet : MonoBehaviour
 {
+    /*
     [Header("Bullets")]
     [SerializeField] GameObject bulletPrefab;
     [SerializeField] Transform playerBulletSpawnPlaceHolder;
@@ -31,4 +32,5 @@ public class ShootBullet : MonoBehaviour
                 break;
         }        
     }
+    */
 }

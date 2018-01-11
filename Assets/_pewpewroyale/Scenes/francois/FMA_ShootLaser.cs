@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 public class ShootLaser : MonoBehaviour {
-
+    /*
     private Transform m_transform;
     private LineRenderer m_laserLineRenderer;
 
