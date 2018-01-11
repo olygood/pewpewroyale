@@ -5,14 +5,18 @@ using UnityEngine.UI;
 
 public class HealthBar_Score : MonoBehaviour
 {
-    public int health = 100;
-    public Image healthBar;
+    public int m_maxHealth = 100;
+    private int m_health;
+    public Image m_healthBar;
 
     private GameObject player;
     public LevelData m_levelData;
     public PlayerInputManager m_inputManager = new PlayerInputManager();
 
-  
+    private void Awake()
+    {
+        m_health = m_maxHealth;
+    }
 
     void OnCollisionEnter2D(Collision2D coll)
     {
@@ -24,11 +28,11 @@ public class HealthBar_Score : MonoBehaviour
 
     public void TakeDamage(int amount)
     {
-        health -= amount;
+        m_health -= amount;
 
-        healthBar.fillAmount = health;
+        m_healthBar.fillAmount = (float) m_health/m_maxHealth;
 
-        if (health <= 0)
+        if (m_health <= 0)
         {
             Respawn();
         }
@@ -39,5 +43,7 @@ public class HealthBar_Score : MonoBehaviour
         int id = m_inputManager.m_playerId;
         Vector2 vect = m_levelData.spawnPoints[id];
         transform.position = vect;
+        m_health = m_maxHealth;
+        m_healthBar.fillAmount = 1;
     }
 }

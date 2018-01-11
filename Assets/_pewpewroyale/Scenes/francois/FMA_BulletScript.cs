@@ -3,23 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
-public class BulletScript : MonoBehaviour {
+public class FMA_BulletScript : MonoBehaviour {
 
     private Rigidbody2D m_body;
-
-    [SerializeField]
-    [Range(1f, 50f)]
-    float speed = 10f;
-
-    float lifetime = 2.5f;
+    private float lifetime = 5f;
 
     void Awake()
     {
         m_body = GetComponent<Rigidbody2D>();
     }
 
-    public void SetVelocity(float x, float y)
+    public void SetVelocity(float x, float y, float speed)
     {
+        Debug.Log("SetVelocity");
         m_body.velocity = new Vector2(x * speed, y * speed);
     }
 

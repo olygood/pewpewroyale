@@ -21,7 +21,7 @@ public class Move : MonoBehaviour
     public void ProcessMovement(Vector3 _moveVector)
     {
         // Process movement
-        Debug.Log("process move");
+        //Debug.Log("process move");
         if (_moveVector.x > 0.1f || _moveVector.y > 0.1f || _moveVector.x < -0.1f || _moveVector.y < -0.1f)
         {
             Debug.Log("on move");
