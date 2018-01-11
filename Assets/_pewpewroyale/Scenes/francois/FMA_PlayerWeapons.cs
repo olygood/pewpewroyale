@@ -71,7 +71,8 @@ public class FMA_PlayerWeapons
                     if (collide.tag == "Player")
                     {
                         FMA_PlayerScript player = collide.gameObject.GetComponent<FMA_PlayerScript>();
-                        m_playerScript.PlayerGetHit(FMA_WeaponSettings.WeaponType.LASER, player);
+                        //m_playerScript.PlayerGetHit(FMA_WeaponSettings.WeaponType.LASER, player);
+                        player.PlayerGetHit(FMA_WeaponSettings.WeaponType.LASER, m_playerScript);
                     }
                 }
                 break;

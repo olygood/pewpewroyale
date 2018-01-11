@@ -22,18 +22,22 @@ public class FMA_PlayerScript : MonoBehaviour
 
     public HealthBar_Score m_health;
 
-    [SerializeField]
+    private PlayerInputManager inputManager;
+
+    //[SerializeField]
     private int m_playerID = -1;
     public int PlayerID
     {
         get { return m_playerID; }
-        set { m_playerID = value; }
+        //set { m_playerID = value; }
     }
     
     void Start()
     {
         weaponsSettings = FMA_WeaponSettings.Instance;
-        if (m_playerID == -1) Debug.LogError("Player ID is not defined!");
+        //if (m_playerID == -1) Debug.LogError("Player ID is not defined!");
+        m_playerID = gameObject.GetComponent<PlayerInputManager>().m_playerId;
+
         if (weaponPlaceHolder == null) Debug.LogError("No Weapon place holder defined for player #" + ((m_playerID == -1) ? "?": m_playerID.ToString()));
         m_transform = GetComponent<Transform>();
         m_weapons = new FMA_PlayerWeapons(weaponPlaceHolder, weaponsSettings, this);

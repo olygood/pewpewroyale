@@ -28,7 +28,7 @@ GameObject:
   - component: {fileID: 114141050629770766}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -220,9 +220,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_maxHealth: 100
-  m_healthBar: {fileID: 0}
+  m_healthBar: {fileID: 114399556984477662, guid: f78e2ebf395ba874c9199d6da46c6f90,
+    type: 2}
   m_levelData: {fileID: 11400000, guid: d7ed3ce754077ef4b8cab32ed23a24ab, type: 2}
-  m_inputManager: {fileID: 114010292189507132}
+  m_playerID: 0
 --- !u!114 &114301860067988566
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -248,6 +249,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponPlaceHolder: {fileID: 1895393676966210}
+  m_health: {fileID: 114141050629770766}
   m_playerID: 0
 --- !u!120 &120865383744795892
 LineRenderer:

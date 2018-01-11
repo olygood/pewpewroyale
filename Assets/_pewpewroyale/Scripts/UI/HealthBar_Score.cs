@@ -11,13 +11,15 @@ public class HealthBar_Score : MonoBehaviour
     
     public LevelData m_levelData;
 
-    [SerializeField]
-    private FMA_PlayerScript m_player;
+    //[SerializeField]
+    //private FMA_PlayerScript m_player;
+
+    public int m_playerID;
 
     private void Awake()
     {
         m_health = m_maxHealth;
-      
+        m_playerID = gameObject.GetComponent<PlayerInputManager>().m_playerId;
     }
     /*
     void OnCollisionEnter2D(Collision2D coll)
@@ -42,8 +44,9 @@ public class HealthBar_Score : MonoBehaviour
   
     public void Respawn()
     {
-        int id = m_player.PlayerID;
-        Vector2 vect = m_levelData.spawnPoints[id];
+        //int id = m_player.PlayerID;
+        //Vector2 vect = m_levelData.spawnPoints[id];
+        Vector2 vect = m_levelData.spawnPoints[m_playerID];
         transform.position = vect;
         m_health = m_maxHealth;
         m_healthBar.fillAmount = 1;
