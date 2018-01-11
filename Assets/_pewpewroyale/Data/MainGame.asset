@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Name: MainGame
   m_EditorClassIdentifier: 
   gameSceneName: main
-  gameData_path: Assets/_pewpewroyale/Data/
+  gameData_path: ./
   playersColor:
   - {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   - {r: 0, g: 1, b: 0, a: 1}

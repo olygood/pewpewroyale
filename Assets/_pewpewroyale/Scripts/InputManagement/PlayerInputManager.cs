@@ -56,7 +56,7 @@ public class PlayerInputManager : MonoBehaviour
         {
             m_shotfired = false;
         }
-        if (m_changeWeapon)
+        if (m_changeWeapon == true)
         {
             m_play.ChangeWeapon();
             /*
@@ -87,7 +87,7 @@ public class PlayerInputManager : MonoBehaviour
         m_rotateVector.x = m_player.GetAxis("RotateHorizontal");
         m_rotateVector.y = m_player.GetAxis("RotateVertical");
         m_shotfired = m_player.GetButton("Shoot");
-        m_changeWeapon = m_player.GetButtonDown("ChangeWeapon");
+        m_changeWeapon = m_player.GetButton("ChangeWeapon");
         if(m_playerId == 1)
         {
             Debug.Log(m_moveVector);
