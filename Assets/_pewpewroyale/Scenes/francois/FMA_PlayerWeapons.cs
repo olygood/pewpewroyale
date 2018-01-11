@@ -52,6 +52,7 @@ public class FMA_PlayerWeapons
         m_weaponPlaceHolderLaserLineRenderer.enabled = true;
         m_weaponPlaceHolderLaserLineRenderer.useWorldSpace = true;
         m_weaponPlaceHolderLaserLineRenderer.startWidth = 0.1f;
+        m_weaponPlaceHolderLaserLineRenderer.sortingOrder = 5;
 
         Weapon = FMA_WeaponSettings.WeaponType.BOLTER;
     }
@@ -83,7 +84,7 @@ public class FMA_PlayerWeapons
         m_weaponPlaceHolderLaserLineRenderer.enabled = false;
     }
 
-    private void ChangeWeapon()
+    public void ChangeWeapon()
     {
         if (m_debug) Debug.Log("Player #" + m_playerID + " : ChangeWeapon");
         switch (m_currentWeapon)
@@ -137,12 +138,15 @@ public class FMA_PlayerWeapons
 
             if (hit.collider)
             {
-                m_weaponPlaceHolderLaserLineRenderer.SetPosition(1, hit.point);
+                //m_weaponPlaceHolderLaserLineRenderer.SetPosition(1, hit.point);
+                m_weaponPlaceHolderLaserLineRenderer.SetPosition(1, new Vector3(hit.point.x, hit.point.y, -1));
                 return hit.collider.gameObject;
             }
             else
             {
-                m_weaponPlaceHolderLaserLineRenderer.SetPosition(1, ray.GetPoint(m_weaponsSettings.LaserReachDistance));
+                //m_weaponPlaceHolderLaserLineRenderer.SetPosition(1, ray.GetPoint(m_weaponsSettings.LaserReachDistance));
+                Vector2 rayPoint = ray.GetPoint(m_weaponsSettings.LaserReachDistance);
+                m_weaponPlaceHolderLaserLineRenderer.SetPosition(1, new Vector3(rayPoint.x, rayPoint.y, -1));
                 return null;
             }
         }
