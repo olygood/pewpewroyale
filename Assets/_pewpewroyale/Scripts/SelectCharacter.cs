@@ -18,7 +18,7 @@ public class SelectCharacter : MonoBehaviour {
     {
         Debug.Log("Player " + m_playerId + "  DesiredCharacter " + _selection);
 
-        currentGame.players[m_playerId].characterType = _selection;
+        currentGame.players[m_playerId-1].characterType = _selection;
     }
 
     private void Awake()
