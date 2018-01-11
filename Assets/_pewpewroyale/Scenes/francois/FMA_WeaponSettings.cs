@@ -20,8 +20,21 @@ public class FMA_WeaponSettings : MonoBehaviour
         LASER
     }
 
+    public float GetDamage(FMA_WeaponSettings.WeaponType weapon)
+    {
+        switch(weapon)
+        {
+            case WeaponType.BOLTER:
+                return m_bolterDamage;
+            case WeaponType.LASER:
+                return m_laserDamage;
+        }
+        return 0f;
+    }
+
     #region Bolter
     [Header("Bolter")]
+    [SerializeField] private float m_bolterDamage = 30f;
     [SerializeField]
     [Range(0f, 2f)]
     public float m_bolterCooldown = 0.1f;
@@ -57,6 +70,8 @@ public class FMA_WeaponSettings : MonoBehaviour
 
     #region Laser
     [Header("Laser")]
+    [SerializeField]
+    private float m_laserDamage = 10f;
     [SerializeField]
     [Range(0f, 2f)]
     float m_laserCooldown = 0f;
