@@ -23,8 +23,7 @@ public class FMA_PlayerScript : MonoBehaviour
         get { return m_playerID; }
         set { m_playerID = value; }
     }
-
-
+    
     void Start()
     {
         weaponsSettings = FMA_WeaponSettings.Instance;
@@ -36,8 +35,8 @@ public class FMA_PlayerScript : MonoBehaviour
 
     void Update()
     {
-        /*
-        if (Input.GetButtonDown("Fire1")) m_weapons.Fire();
+        if (Input.GetButton("Fire1")) m_weapons.Fire();
+        else if (Input.GetButtonUp("Fire1")) m_weapons.FireStop();
         if (Input.GetButtonDown("Fire2"))
         {
             switch (m_weapons.Weapon)
@@ -49,7 +48,12 @@ public class FMA_PlayerScript : MonoBehaviour
                     m_weapons.Weapon = FMA_WeaponSettings.WeaponType.LASER;
                     break;
             }
-        }*/
+        }
+    }
+
+    public void FireStop()
+    {
+        m_weapons.FireStop();
     }
 
     public void Fire()
@@ -75,7 +79,7 @@ public class FMA_PlayerScript : MonoBehaviour
 
     public void PlayerGetHit(FMA_WeaponSettings.WeaponType weapon, FMA_PlayerScript origin)
     {
-        if (m_debug) Debug.Log(string.Format("Player #{0} hit by {1} from player #{2}", m_playerID, weapon, origin.PlayerID));
+        if (m_debug) Debug.Log(string.Format("Player #{0} dealt {1} damages by {2} from player #{3}", m_playerID, weaponsSettings.GetDamage(weapon), weapon, origin.PlayerID));
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

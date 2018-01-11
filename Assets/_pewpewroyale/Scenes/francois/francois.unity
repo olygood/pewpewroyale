@@ -731,11 +731,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f42be512cfd5e28418f36bada21978d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_bolterCooldown: 0
+  m_bolterDamage: 30
+  m_bolterCooldown: 0.1
   m_weaponBolterSprite: {fileID: 21300000, guid: a693ba63d6aa6dc4785a1dc0ff3505a1,
     type: 3}
   m_weaponBolterAudioClip: {fileID: 0}
   m_bulletSpeed: 10
+  m_laserDamage: 10
   m_laserCooldown: 0
   m_laserReachDistance: 10
   m_weaponLaserSprite: {fileID: 21300000, guid: 02f5bdf2090641944a11c30aa39f57a7,

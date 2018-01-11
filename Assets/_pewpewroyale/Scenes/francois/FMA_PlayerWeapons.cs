@@ -78,6 +78,11 @@ public class FMA_PlayerWeapons
         }
     }
 
+    public void FireStop()
+    {
+        m_weaponPlaceHolderLaserLineRenderer.enabled = false;
+    }
+
     private void ChangeWeapon()
     {
         if (m_debug) Debug.Log("Player #" + m_playerID + " : ChangeWeapon");

@@ -1,10 +1,44 @@
-﻿using System.Collections;
+﻿using Rewired;
+using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class SceneMenu : MonoBehaviour
 {
+    private Player m_player;
+
+    private int focus = 0;
+    public List<Button> menu;
+
+    private void Awake()
+    {
+        m_player = ReInput.players.GetPlayer(0);
+    }
+
+    private void Update()
+    {
+        if (m_player.GetButtonDown("Previous"))
+            focus--;
+        else if (m_player.GetButtonDown("Next"))
+            focus++;
+
+        Debug.Log(focus);
+
+        if (focus > menu.Count - 1)
+            focus = menu.Count - 1;
+        else if (focus < 0)
+            focus = 0;
+
+        Debug.Log(focus);
+
+        menu[focus].Select();
+
+        if (m_player.GetButtonDown("Submit"))
+            menu[focus].onClick.Invoke();
+    }
+
     public void NewGame()
     {
         SceneManager.LoadSceneAsync("ChosePlayerMenu");
