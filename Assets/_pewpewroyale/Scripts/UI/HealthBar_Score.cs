@@ -19,6 +19,9 @@ public class HealthBar_Score : MonoBehaviour
     private void Awake()
     {
         m_health = m_maxHealth;
+    }
+    private void Start()
+    {
         m_playerID = gameObject.GetComponent<PlayerInputManager>().m_playerId;
     }
     /*
