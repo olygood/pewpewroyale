@@ -113,7 +113,14 @@ public class ImportNinjaInitializer
             if (path.dontSave)
                 continue;
 
-            file.CopyTo(path.fullPath);
+            try
+            {
+                file.CopyTo(path.fullPath);
+            }
+            catch (IOException)
+            {
+
+            }
         }
 
         // If copying subdirectories, copy them and their contents to new location.
