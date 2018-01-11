@@ -8,7 +8,9 @@ using System;
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerInputManager : MonoBehaviour
 {
-    public int m_playerId = 0; // The Rewired player id of this character
+    private bool m_initialized;
+
+    public int m_playerId; // The Rewired player id of this character
     public Move m_move;
     public ShootBullet m_shoot;
 
@@ -20,7 +22,11 @@ public class PlayerInputManager : MonoBehaviour
     public FMA_PlayerScript m_play;
 
     //[System.NonSerialized] // Don't serialize this so the value is lost on an editor script recompile.
-    private bool m_initialized = false;
+    private void Awake()
+    {
+        m_initialized = false;
+    }
+    
 
     private void Initialize()
     {

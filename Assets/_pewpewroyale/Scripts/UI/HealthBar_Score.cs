@@ -11,11 +11,12 @@ public class HealthBar_Score : MonoBehaviour
 
     private GameObject player;
     public LevelData m_levelData;
-    public PlayerInputManager m_inputManager = new PlayerInputManager();
+    public PlayerInputManager m_inputManager;
 
     private void Awake()
     {
         m_health = m_maxHealth;
+        m_inputManager = new PlayerInputManager();
     }
 
     void OnCollisionEnter2D(Collision2D coll)
