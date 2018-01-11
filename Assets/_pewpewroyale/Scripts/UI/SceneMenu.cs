@@ -19,9 +19,9 @@ public class SceneMenu : MonoBehaviour
 
     private void Update()
     {
-        if (m_player.GetButtonDown("Previous"))
+        if (m_player.GetButtonDown("Up"))
             focus--;
-        else if (m_player.GetButtonDown("Next"))
+        else if (m_player.GetButtonDown("Down"))
             focus++;
 
         Debug.Log(focus);

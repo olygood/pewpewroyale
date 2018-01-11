@@ -52,7 +52,11 @@ public class FMA_PlayerWeapons
         m_weaponPlaceHolderLaserLineRenderer.enabled = true;
         m_weaponPlaceHolderLaserLineRenderer.useWorldSpace = true;
         m_weaponPlaceHolderLaserLineRenderer.startWidth = 0.1f;
+<<<<<<< HEAD
         m_weaponPlaceHolderLaserLineRenderer.sortingOrder = 5;
+=======
+        m_weaponPlaceHolderLaserLineRenderer.sortingOrder = 10;
+>>>>>>> 2c56ed5a89056f3004e7eb5e39b3d864b7ce1b09
 
         Weapon = FMA_WeaponSettings.WeaponType.BOLTER;
     }
