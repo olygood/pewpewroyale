@@ -50,7 +50,7 @@ public class PlayerInputManager : MonoBehaviour
         {
             m_play.Fire();
             //m_shoot.FireBullet();
-            m_shotfired = false;
+            //m_shotfired = false;
         }
         else
         {
@@ -83,7 +83,7 @@ public class PlayerInputManager : MonoBehaviour
         m_moveVector.y = m_player.GetAxis("MoveVertical");
         m_rotateVector.x = m_player.GetAxis("RotateHorizontal");
         m_rotateVector.y = m_player.GetAxis("RotateVertical");
-        m_shotfired = m_player.GetButtonDown("Shoot");
+        m_shotfired = m_player.GetButton("Shoot");
         m_changeWeapon = m_player.GetButton("ChangeWeapon");
         if(m_playerId == 1)
         {
