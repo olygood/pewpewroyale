@@ -21,6 +21,7 @@ public class PlayerInputManager : MonoBehaviour
     private bool m_changeWeapon;
 
     public FMA_PlayerScript m_play;
+    private FMA_WeaponSettings m_weapon;
 
     //[System.NonSerialized] // Don't serialize this so the value is lost on an editor script recompile.
     private void Awake()
@@ -51,6 +52,26 @@ public class PlayerInputManager : MonoBehaviour
             //m_shoot.FireBullet();
             m_shotfired = false;
         }
+        else
+        {
+            m_shotfired = false;
+        }
+        if (m_changeWeapon)
+        {
+            switch (m_play.Weapon)
+            {
+                case FMA_WeaponSettings.WeaponType.BOLTER:
+                    m_play.ChangeWeapon(FMA_WeaponSettings.WeaponType.LASER);
+                    break;
+                case FMA_WeaponSettings.WeaponType.LASER:
+                    m_play.ChangeWeapon(FMA_WeaponSettings.WeaponType.BOLTER);
+                    break;
+                default:
+                    break;
+            }
+             //            m_play.ChangeWeapon(FMA_WeaponSettings.WeaponType.);
+            Debug.Log("Changed weapon");
+        }
     }
 
     private void GetInput()
@@ -62,7 +83,7 @@ public class PlayerInputManager : MonoBehaviour
         m_moveVector.y = m_player.GetAxis("MoveVertical");
         m_rotateVector.x = m_player.GetAxis("RotateHorizontal");
         m_rotateVector.y = m_player.GetAxis("RotateVertical");
-        m_shotfired = m_player.GetButton("Shoot");
+        m_shotfired = m_player.GetButtonDown("Shoot");
         m_changeWeapon = m_player.GetButton("ChangeWeapon");
         if(m_playerId == 1)
         {

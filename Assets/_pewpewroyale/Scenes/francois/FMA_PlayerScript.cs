@@ -15,6 +15,10 @@ public class FMA_PlayerScript : MonoBehaviour
 
     public GameObject weaponPlaceHolder;
     private FMA_WeaponSettings weaponsSettings;
+    public FMA_WeaponSettings.WeaponType Weapon
+    {
+        get { return m_weapons.Weapon; }
+    }
 
     public HealthBar_Score m_health;
 
