@@ -8,17 +8,18 @@ public class HealthBar_Score : MonoBehaviour
     public int m_maxHealth = 100;
     private int m_health;
     public Image m_healthBar;
-
-    private GameObject player;
+    
     public LevelData m_levelData;
-    public PlayerInputManager m_inputManager;
+
+    [SerializeField]
+    private FMA_PlayerScript m_player;
 
     private void Awake()
     {
         m_health = m_maxHealth;
-        m_inputManager = new PlayerInputManager();
+      
     }
-
+    /*
     void OnCollisionEnter2D(Collision2D coll)
     {
         if (coll.gameObject.tag == "bullet")
@@ -26,7 +27,7 @@ public class HealthBar_Score : MonoBehaviour
             TakeDamage(10);
         }
     }
-
+    */
     public void TakeDamage(int amount)
     {
         m_health -= amount;
@@ -41,7 +42,7 @@ public class HealthBar_Score : MonoBehaviour
   
     public void Respawn()
     {
-        int id = m_inputManager.m_playerId;
+        int id = m_player.PlayerID;
         Vector2 vect = m_levelData.spawnPoints[id];
         transform.position = vect;
         m_health = m_maxHealth;
