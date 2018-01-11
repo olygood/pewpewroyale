@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/_pewpewroyale/Scenes/Neil/ChosePlayerMenu.unity
     guid: 312c4061f87c1704297ccd0976f1bc04
   - enabled: 1
-    path: Assets/_pewpewroyale/Scenes/main.unity
+    path: Assets/_pewpewroyale/Scenes/main_old.unity
     guid: 7fe30ec3ef51f064d8e7919f9987c603
   - enabled: 0
     path: Assets/_pewpewroyale/Scenes/JeromeJ/jeromej.unity
@@ -26,6 +26,9 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/_pewpewroyale/Scenes/francois/francois.unity
     guid: f6eeb326ad6ba2d43bfe4cdb887deba0
+  - enabled: 0
+    path: Assets/_pewpewroyale/Scenes/main_old.unity
+    guid: 7fe30ec3ef51f064d8e7919f9987c603
   - enabled: 1
     path: Assets/_pewpewroyale/Scenes/main.unity
-    guid: 7fe30ec3ef51f064d8e7919f9987c603
+    guid: 52d50ab74f3e877429e084e65c33bb33
