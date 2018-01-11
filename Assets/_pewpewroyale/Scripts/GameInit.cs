@@ -74,6 +74,8 @@ public class GameInit : DualBehaviour
 
         GameObject player = GameObject.Instantiate(m_playerPrefab);
 
+        player.GetComponent<PlayerInputManager>().m_playerId = _player.id;
+
         player.transform.position = new Vector3(
             m_levelData.spawnPoints[_player.id].x,
             m_levelData.spawnPoints[_player.id].y,
