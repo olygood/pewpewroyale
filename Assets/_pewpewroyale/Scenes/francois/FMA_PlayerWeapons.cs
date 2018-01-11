@@ -2,7 +2,7 @@
 
 public class FMA_PlayerWeapons
 {
-    private bool m_debug = false;
+    private bool m_debug = true;
     private int m_playerID;
 
     private FMA_PlayerScript m_playerScript;
@@ -84,7 +84,8 @@ public class FMA_PlayerWeapons
         switch (m_currentWeapon)
         {
             case FMA_WeaponSettings.WeaponType.BOLTER:
-                m_weaponPlaceHolderSpriteRenderer.sprite = m_weaponsSettings.WeaponBolterSprite;
+                m_weaponPlaceHolderSpriteRenderer.sprite = 
+                    m_weaponsSettings.WeaponBolterSprite;
                 if (m_weaponPlaceHolderAudioSource) m_weaponPlaceHolderAudioSource.clip = m_weaponsSettings.WeaponBolterAudioClip;
                 break;
             case FMA_WeaponSettings.WeaponType.LASER:
