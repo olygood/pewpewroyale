@@ -39,10 +39,13 @@ public class HealthBar_Score : MonoBehaviour
 
         Color color = GetComponent<SpriteRenderer>().material.color;
         color.a = (float)m_health / m_maxHealth;
+        GetComponent<SpriteRenderer>().material.color = color;
         //m_healthBar.fillAmount = (float) m_health/m_maxHealth;
 
         if (m_health <= 0)
         {
+            color.a = 100f;
+            GetComponent<SpriteRenderer>().material.color = color;
             Respawn();
         }
     }
