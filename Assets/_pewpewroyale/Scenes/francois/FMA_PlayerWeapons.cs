@@ -2,10 +2,10 @@
 
 public class FMA_PlayerWeapons
 {
-    private bool m_debug = true;
-    private int m_playerID;
+    private bool m_debug = false;
 
     private FMA_PlayerScript m_playerScript;
+    private int m_playerID;
 
     private GameObject m_weaponPlaceHolder;
     private Transform m_weaponPlaceHolderTransform;
@@ -16,13 +16,12 @@ public class FMA_PlayerWeapons
 
     private FMA_WeaponSettings m_weaponsSettings;
 
-    public FMA_PlayerWeapons(int playerID, GameObject weaponPlaceHolder, FMA_WeaponSettings weaponsSettings, FMA_PlayerScript playerScript)
+    public FMA_PlayerWeapons(GameObject weaponPlaceHolder, FMA_WeaponSettings weaponsSettings, FMA_PlayerScript playerScript)
     {
-        m_playerID = playerID;
+        m_playerID = playerScript.PlayerID;
         m_weaponPlaceHolder = weaponPlaceHolder;
         m_playerScript = playerScript;
         m_weaponsSettings = weaponsSettings;
-
         InitWeapon();
     }
 
@@ -71,7 +70,8 @@ public class FMA_PlayerWeapons
                 {
                     if (collide.tag == "Player")
                     {
-                        Debug.Log("Player hit by laser");
+                        FMA_PlayerScript player = collide.gameObject.GetComponent<FMA_PlayerScript>();
+                        m_playerScript.PlayerGetHit(FMA_WeaponSettings.WeaponType.LASER, player);
                     }
                 }
                 break;
@@ -108,6 +108,7 @@ public class FMA_PlayerWeapons
             FMA_BulletScript bulletScript = bullet.GetComponent<FMA_BulletScript>();
             Vector3 translation = (m_weaponPlaceHolderTransform.position - m_playerScript.Position);
             bulletScript.SetVelocity(translation.x, translation.y, m_weaponsSettings.BulletSpeed);
+            bulletScript.OriginPlayer = m_playerScript.gameObject;
         }
         else bulletsCooldownBuffer += Time.deltaTime;
     }
