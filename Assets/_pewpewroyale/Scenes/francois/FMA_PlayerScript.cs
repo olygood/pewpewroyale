@@ -43,6 +43,12 @@ public class FMA_PlayerScript : MonoBehaviour
         m_weapons = new FMA_PlayerWeapons(weaponPlaceHolder, weaponsSettings, this);
     }
 
+    public void IKilledSomeone()
+    {
+        Transform trans = gameObject.GetComponent<Transform>();
+        trans.localScale *= 1.2f;
+    }
+
     void Update()
     {
         if (Input.GetButton("Fire1")) m_weapons.Fire();
@@ -91,7 +97,7 @@ public class FMA_PlayerScript : MonoBehaviour
     {
         float damages = weaponsSettings.GetDamage(weapon);
         if (m_debug) Debug.Log(string.Format("Player #{0} dealt {1} damages by {2} from player #{3}", m_playerID, damages, weapon, origin.PlayerID));
-        m_health.TakeDamage((int)damages);
+        m_health.TakeDamage((int)damages, origin);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

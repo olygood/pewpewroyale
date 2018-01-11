@@ -33,7 +33,7 @@ public class HealthBar_Score : MonoBehaviour
         }
     }
     */
-    public void TakeDamage(int amount)
+    public void TakeDamage(int amount, FMA_PlayerScript origin)
     {
         m_health -= amount;
 
@@ -44,6 +44,7 @@ public class HealthBar_Score : MonoBehaviour
 
         if (m_health <= 0)
         {
+            origin.IKilledSomeone();
             color.a = 100f;
             GetComponent<SpriteRenderer>().material.color = color;
             Respawn();
