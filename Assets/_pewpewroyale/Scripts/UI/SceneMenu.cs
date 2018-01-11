@@ -12,6 +12,8 @@ public class SceneMenu : MonoBehaviour
     private int focus = 0;
     public List<Button> menu;
 
+    public GameObject creditPanel;
+
     private void Awake()
     {
         m_player = ReInput.players.GetPlayer(0);
@@ -37,6 +39,9 @@ public class SceneMenu : MonoBehaviour
 
         if (m_player.GetButtonDown("Submit"))
             menu[focus].onClick.Invoke();
+
+        if(m_player.GetButtonDown("Start"))
+            creditPanel.SetActive(false);
     }
 
     public void NewGame()
@@ -55,15 +60,13 @@ public class SceneMenu : MonoBehaviour
 
     public void Options()
     {
-        // Priorité 3
+        // Priorité 4
         Debug.LogWarning("Options WIP");
     }
 
     public void Credit()
     {
-        // Priorité 4
-
-        Debug.LogWarning("Credit WIP");
+        creditPanel.SetActive(true);
     }
 	
 }
