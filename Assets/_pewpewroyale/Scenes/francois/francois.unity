@@ -732,7 +732,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_bolterDamage: 30
-  m_bolterCooldown: 0
+  m_bolterCooldown: 0.1
   m_weaponBolterSprite: {fileID: 21300000, guid: a693ba63d6aa6dc4785a1dc0ff3505a1,
     type: 3}
   m_weaponBolterAudioClip: {fileID: 0}

@@ -18,6 +18,7 @@ public class PlayerInputManager : MonoBehaviour
     private Vector3 m_moveVector;
     private Vector3 m_rotateVector;
     private bool m_shotfired;
+    private bool m_changeWeapon;
 
     public FMA_PlayerScript m_play;
 
@@ -62,6 +63,7 @@ public class PlayerInputManager : MonoBehaviour
         m_rotateVector.x = m_player.GetAxis("RotateHorizontal");
         m_rotateVector.y = m_player.GetAxis("RotateVertical");
         m_shotfired = m_player.GetButton("Shoot");
+        m_changeWeapon = m_player.GetButton("ChangeWeapon");
         if(m_playerId == 1)
         {
             Debug.Log(m_moveVector);
