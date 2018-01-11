@@ -14,12 +14,14 @@ public class FMA_PlayerScript : MonoBehaviour
     private FMA_PlayerWeapons m_weapons;
 
     public GameObject weaponPlaceHolder;
-    public FMA_WeaponSettings weaponsSettings;
+    private FMA_WeaponSettings weaponsSettings;
 
     public int m_playerID = -1;
     
     void Start()
     {
+        weaponsSettings = FMA_WeaponSettings.Instance;
+        Debug.Log(string.Format("weaponsSettings is null : {0}", weaponsSettings==null));
         if (m_playerID == -1) Debug.LogError("Player ID is not defined!");
         if (weaponPlaceHolder == null) Debug.LogError("No Weapon place holder defined for player #" + ((m_playerID == -1) ? "?": m_playerID.ToString()));
         m_transform = GetComponent<Transform>();
@@ -28,23 +30,24 @@ public class FMA_PlayerScript : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetButtonDown("Fire1")) m_weapons.Fire();
-        if (Input.GetButtonDown("Fire2"))
-        {
-            switch (m_weapons.Weapon)
-            {
-                case FMA_WeaponSettings.WeaponType.LASER:
-                    m_weapons.Weapon = FMA_WeaponSettings.WeaponType.BOLTER;
-                    break;
-                case FMA_WeaponSettings.WeaponType.BOLTER:
-                    m_weapons.Weapon = FMA_WeaponSettings.WeaponType.LASER;
-                    break;
-            }
-        }
+        //if (Input.GetButtonDown("Fire1")) m_weapons.Fire();
+        //if (Input.GetButtonDown("Fire2"))
+        //{
+        //    switch (m_weapons.Weapon)
+        //    {
+        //        case FMA_WeaponSettings.WeaponType.LASER:
+        //            m_weapons.Weapon = FMA_WeaponSettings.WeaponType.BOLTER;
+        //            break;
+        //        case FMA_WeaponSettings.WeaponType.BOLTER:
+        //            m_weapons.Weapon = FMA_WeaponSettings.WeaponType.LASER;
+        //            break;
+        //    }
+        //}
     }
 
     public void Fire()
     {
+        Debug.Log("Fire : " + m_weapons);
         m_weapons.Fire();
     }
 

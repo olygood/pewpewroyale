@@ -26,6 +26,7 @@ GameObject:
   - component: {fileID: 58721704236040238}
   - component: {fileID: 114060677703781010}
   - component: {fileID: 114104282218325766}
+  - component: {fileID: 114878735856290366}
   m_Layer: 0
   m_Name: Player 1
   m_TagString: Untagged
@@ -140,6 +141,7 @@ MonoBehaviour:
   m_playerId: 3
   m_move: {fileID: 114622173513369956}
   m_shoot: {fileID: 114625667568232140}
+  m_play: {fileID: 0}
 --- !u!114 &114622173513369956
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -168,7 +170,26 @@ MonoBehaviour:
     type: 2}
   playerBulletSpawnPlaceHolder: {fileID: 4615484843266052}
   cooldown: 0.4
+<<<<<<< HEAD
   buffer: 0
+=======
+--- !u!114 &114878735856290366
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1370253081893162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b61244e4f620feb4fb77b8a61c0ee393, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  health: 0
+  healthBar: {fileID: 0}
+  m_levelData: {fileID: 0}
+  m_inputManager: {fileID: 0}
+>>>>>>> c35403f9ce8d4c4cfa7d70ae506cdc7aacebd42a
 --- !u!212 &212199501076612708
 SpriteRenderer:
   m_ObjectHideFlags: 1
