@@ -16,6 +16,8 @@ public class FMA_PlayerScript : MonoBehaviour
     public GameObject weaponPlaceHolder;
     private FMA_WeaponSettings weaponsSettings;
 
+    public HealthBar_Score m_health;
+
     [SerializeField]
     private int m_playerID = -1;
     public int PlayerID
@@ -75,7 +77,9 @@ public class FMA_PlayerScript : MonoBehaviour
 
     public void PlayerGetHit(FMA_WeaponSettings.WeaponType weapon, FMA_PlayerScript origin)
     {
-        if (m_debug) Debug.Log(string.Format("Player #{0} dealt {1} damages by {2} from player #{3}", m_playerID, weaponsSettings.GetDamage(weapon), weapon, origin.PlayerID));
+        float damages = weaponsSettings.GetDamage(weapon);
+        if (m_debug) Debug.Log(string.Format("Player #{0} dealt {1} damages by {2} from player #{3}", m_playerID, damages, weapon, origin.PlayerID));
+        m_health.TakeDamage((int)damages);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
