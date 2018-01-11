@@ -35,8 +35,8 @@ public class FMA_PlayerScript : MonoBehaviour
 
     void Update()
     {
-        /*
-        if (Input.GetButtonDown("Fire1")) m_weapons.Fire();
+        if (Input.GetButton("Fire1")) m_weapons.Fire();
+        else if (Input.GetButtonUp("Fire1")) m_weapons.FireStop();
         if (Input.GetButtonDown("Fire2"))
         {
             switch (m_weapons.Weapon)
@@ -49,7 +49,11 @@ public class FMA_PlayerScript : MonoBehaviour
                     break;
             }
         }
-        //*/
+    }
+
+    public void FireStop()
+    {
+        m_weapons.FireStop();
     }
 
     public void Fire()
