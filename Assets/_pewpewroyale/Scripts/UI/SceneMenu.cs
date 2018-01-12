@@ -13,6 +13,8 @@ public class SceneMenu : MonoBehaviour
     public List<Button> menu;
 
     public GameObject creditPanel;
+    public GameObject optionPanel;
+    public GameObject mainMenu;
 
     private void Awake()
     {
@@ -62,11 +64,22 @@ public class SceneMenu : MonoBehaviour
     {
         // Priorité 4
         Debug.LogWarning("Options WIP");
+        optionPanel.SetActive(true);
+        mainMenu.SetActive(false);
+        
     }
 
     public void Credit()
     {
         creditPanel.SetActive(true);
+        mainMenu.SetActive(false);
+    }
+
+    public void BackButton()
+    {
+        mainMenu.SetActive(true);
+        optionPanel.SetActive(false);
+        creditPanel.SetActive(false);
     }
 	
 }
